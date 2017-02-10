@@ -1,2 +1,3 @@
-# Docker_WidflySwarm
-Docker Hub Machine (Widfly Swarm)
+# Docker_WildflySwarm
+
+Docker Hub Machine (Wildfly Swarm)
