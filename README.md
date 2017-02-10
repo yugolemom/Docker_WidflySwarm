@@ -1,2 +1,2 @@
 # Docker_WidlySwarm
-Docker Hub Machine (Widlfy Swarm)
+Docker Hub Machine (Widfly Swarm)
