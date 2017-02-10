@@ -1,0 +1,15 @@
+#!/bin/bash
+
+LOCAL_SOURCE_DIR=${HOME}
+
+if [ -z "$SWARM_JAR" ]; then
+  SWARM_JAR="target/*-swarm.jar"
+fi
+
+BIND_IP=`hostname -i`
+
+export OPENSHIFT_KUBE_PING_NAMESPACE=$OPENSHIFT_BUILD_NAMESPACE
+
+exec java -Dswarm.bind.address=$BIND_IP -Dswarm.http.port=8080 \
+     -Dswarm.port.offset=0 -Djava.net.preferIPv4Stack=true \
+     $JAVA_OPTIONS -jar $LOCAL_SOURCE_DIR/$SWARM_JAR

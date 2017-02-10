@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+LOCAL_SOURCE_DIR=${HOME}
+mkdir -p $LOCAL_SOURCE_DIR
+
+cp -Rf /tmp/src/. $LOCAL_SOURCE_DIR
+chgrp -R 0 $LOCAL_SOURCE_DIR
+chmod -R g+rw $LOCAL_SOURCE_DIR
+
+LOCAL_SOURCE_DIR=${HOME}
+
+if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
+
+  mvn --version
+  mvn package 
+  
+else
+  echo "Oops - erro mavem!"
+  exit 1
+fi
+
+echo "...Vamos comecar!!"
